@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useContext } from "react"
+import Home from "./Components/Home";
+import Quiz from "./Components/Quiz";
+import Results from "./Components/Results";
+
+import { SiteContext } from "./Helpers/Contexts";
 
 function App() {
+  const [siteState, setSiteState] = useState("home");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Survey</h1>
+      <SiteContext.Provider value={{ siteState, setSiteState }}>
+        {siteState === "home" && <Home />}
+        {siteState === "quiz" && <Quiz />}
+        {siteState === "results" && <Results />}
+      </SiteContext.Provider> 
     </div>
   );
 }
