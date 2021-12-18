@@ -31,9 +31,4 @@ export const Questions = [
         option1: "Yes",
         option2: "No"
     },
-    {
-        question: "new question",
-        option1: "wow",
-        option2: "lol"
-    },
 ]

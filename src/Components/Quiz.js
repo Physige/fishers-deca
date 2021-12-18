@@ -1,7 +1,9 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import { Questions } from "../Helpers/Questions"
+import { SiteContext } from "../Helpers/Contexts";
 
 function Quiz() {
+  const { setSelected, setSiteState } = useContext(SiteContext);
 
   // changes state based on current question
   const [currQuestion, setCurrQuestion] = useState(0);
@@ -14,10 +16,14 @@ function Quiz() {
   }
   
   const nextQuestion = () => {
-    // if finish button is clicked, submit form
-    if (currQuestion >= Questions.length) {/*TODO*/}
-
     setCurrQuestion(currQuestion + 1);
+
+    // if finish button is clicked, submit form
+    if (currQuestion >= Questions.length - 1) {
+      // passes the checkboxStates to the context's selected state
+      setSelected(checkboxStates);
+      setSiteState("results");
+    }
   }
 
   // populates current question with previously selected answers or updates question with new selections
@@ -47,7 +53,11 @@ function Quiz() {
   
   return (
     <div className="Quiz">
-      <h1>{Questions[currQuestion].question}</h1>
+      <progress value={(currQuestion/Questions.length)*100} max="100"></progress>
+
+      <h1>Question {currQuestion + 1}</h1>
+
+      <p>{Questions[currQuestion].question}</p>
       
       <div id="options">
         {
