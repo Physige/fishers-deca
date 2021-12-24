@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import React, { useState, useContext } from "react"
 import Home from "./Components/Home";
 import Quiz from "./Components/Quiz";
