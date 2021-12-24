@@ -17,18 +17,13 @@ export const Questions = [
         option1: "Written Project w/Presentation (1-3 Participants)",
         option2: "Role-Play (1 Participant)",
         option3: "Case Study (2 Participants)",
-        option4: "Professional Selling Event (? Participants)"
+        option4: "Professional Selling Event (? Participants)",
+        option5: "Online Competition (1-3 Participants)"
     },
 
     {
         question: "Project with exam?",
         option1: "Yes (With Exam)",
         option2: "No (Without Exam)"
-    },
-
-    {
-        question: "Are you interested in online competitions?",
-        option1: "Yes",
-        option2: "No"
     },
 ]

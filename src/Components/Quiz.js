@@ -26,8 +26,9 @@ function Quiz() {
     }
   }
 
-  // populates current question with previously selected answers or updates question with new selections
+  // populates current question with previously selected answers or updates selections when clicked
   const populateCheckboxes = (e) => {
+    // NOTE: the [... ###] is needed for the stateful array to be updated
     // current state of checkboxStates
     let allQuestionsState = [... checkboxStates];
 
@@ -38,12 +39,15 @@ function Quiz() {
     
     if (checked) {
       // adds id of selected question to corresponding array in checkboxStates
+      // NOTE: these extra steps need to be taken for updating a stateful array
       currQuestionState.push(e.target.id);
       allQuestionsState[currQuestion] = currQuestionState;
       console.log(allQuestionsState);
       setCheckboxStates(allQuestionsState);
     } else {
       // removes id of selected question to corresponding array in checkboxStates
+      // NOTE: these extra steps need to be taken for updating a stateful array
+      // TODO maybe: check if indexOf returns -1
       currQuestionState.splice(currQuestionState.indexOf(e.target.id), 1);
       allQuestionsState[currQuestion] = currQuestionState;
       console.log(allQuestionsState);
