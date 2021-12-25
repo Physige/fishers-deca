@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fishers-deca/static/css/main.2940a368.css",
-    "main.js": "/fishers-deca/static/js/main.43b6d9be.js",
+    "main.css": "/fishers-deca/static/css/main.3297aca0.css",
+    "main.js": "/fishers-deca/static/js/main.fc667dd2.js",
     "index.html": "/fishers-deca/index.html",
-    "main.2940a368.css.map": "/fishers-deca/static/css/main.2940a368.css.map",
-    "main.43b6d9be.js.map": "/fishers-deca/static/js/main.43b6d9be.js.map"
+    "main.3297aca0.css.map": "/fishers-deca/static/css/main.3297aca0.css.map",
+    "main.fc667dd2.js.map": "/fishers-deca/static/js/main.fc667dd2.js.map"
   },
   "entrypoints": [
-    "static/css/main.2940a368.css",
-    "static/js/main.43b6d9be.js"
+    "static/css/main.3297aca0.css",
+    "static/js/main.fc667dd2.js"
   ]
 }
