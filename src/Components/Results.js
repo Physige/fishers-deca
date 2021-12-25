@@ -3,7 +3,9 @@ import { SiteContext } from "../Helpers/Contexts";
 import { Questions } from "../Helpers/Questions";
 import { Events } from "../Helpers/Events";
 import Collapsible from 'react-collapsible';
+import OrangeButton from "./Buttons/OrangeButton";
 
+// lol this entire file is a mess. too bad!
 function Results() {
   const { selected } = useContext(SiteContext);
   const unselected = invertSelected(selected);
@@ -79,23 +81,55 @@ function Results() {
 
   return (
     <div className="Results">
-      {
-        eventList.map((event, i) => {
-          return (
-            <Collapsible trigger={event}>
-              {
-                getEventDetails(event).map((eventDetails, i) => {
-                  return (
-                    <p>{eventDetails}</p>
-                  )
-                })
+      <div className="flex justify-center">
+        <div className="text-4xl font-bold w-64">Here Are Your Matches</div>
+      </div>
+      <div className="grid grid-cols-2 divide-x p-8 content-center">
+        <div className="flex justify-end content-center">
+          {/* displays different text depending if no events could be found */}
+          <div className="w-64 pr-8 text-left">{eventList.length > 0 ? 
+            "Remember! You don’t have to choose one of these. Click view all to see all the events." :
+            "No event could be found. Make sure you select All THAT APPLY. Please try again."
+            }</div>
+        </div>
+        <div className="grid justify-start content-center">
+          <div className="sm:w-64 pl-8">
+            {/* prompts to try again and reload page if no events could be found */}
+            <OrangeButton label={eventList.length > 0 ? "VIEW ALL" : "TRY AGAIN"} handleClick={() => {
+              if (eventList.length > 0) {
+                window.location.href = "https://www.deca.org/high-school-programs/high-school-competitive-events/";
+              } else {
+                window.location.reload();
               }
-            </Collapsible>
+            }}/>
+          </div>
+        </div>
+      </div>
+      {
+        eventList.map((event) => {
+          return (
+            <div className="flex justify-center p-2">
+              <Collapsible 
+              trigger={
+                <div className="w-[40vw] p-5 bg-stone-200 text-left">{event}</div>
+              }
+              triggerOpenedClassName={
+                <div>{event}</div>
+              }>
+                {
+                  getEventDetails(event).map((eventDetails) => {
+                    return (
+                      <div className="bg-stone-300 text-left">
+                        <li className="p-2 pl-5 w-[40vw] break-all">{eventDetails}</li>
+                      </div>
+                    )
+                  })
+                }
+              </Collapsible>
+            </div>
           )
         })
       }
-
-      <p>{eventList.length < 1 ? "No event could be found. Make sure you select All THAT APPLY. Please try again." : ""}</p>
     </div>
   );
 }
