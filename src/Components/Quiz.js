@@ -86,7 +86,6 @@ function Quiz() {
             )
           })
         }
-        
       </div>
       <div className="flex justify-center p-20">
         <div className="px-[3vw]"><NormalButton handleClick={() => previousQuestion()} disabled={currQuestion <= 0 ? true : false} label="BACK"/></div>

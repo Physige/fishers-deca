@@ -94,7 +94,7 @@ function Results() {
             }</div>
         </div>
         <div className="grid justify-start content-center">
-          <div className="sm:w-64 sm:pl-8 pl-[6vw]">
+          <div className="sm:w-64 sm:pl-8 pl-[9vw]">
             {/* prompts to try again and reload page if no events could be found */}
             <OrangeButton label={eventList.length > 0 ? "VIEW ALL" : "TRY AGAIN"} handleClick={() => {
               if (eventList.length > 0) {
@@ -131,7 +131,6 @@ function Results() {
           )
         })
       }
-      <div className="h-32"></div>
     </div>
   );
 }
