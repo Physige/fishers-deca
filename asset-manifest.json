@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fishers-deca/static/css/main.b42dd925.css",
+    "main.js": "/fishers-deca/static/js/main.6fbb1b90.js",
+    "index.html": "/fishers-deca/index.html",
+    "main.b42dd925.css.map": "/fishers-deca/static/css/main.b42dd925.css.map",
+    "main.6fbb1b90.js.map": "/fishers-deca/static/js/main.6fbb1b90.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b42dd925.css",
+    "static/js/main.6fbb1b90.js"
+  ]
+}
