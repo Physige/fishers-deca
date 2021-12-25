@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="h-24"></div>
       <SiteContext.Provider value={{ selected, setSelected, siteState, setSiteState }}>
         {siteState === "home" && <Home />}
         {siteState === "quiz" && <Quiz />}

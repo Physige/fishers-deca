@@ -82,7 +82,7 @@ function Results() {
 
   return (
     <div className="Results">
-      <div className="flex justify-center">
+      <div className="flex justify-center pt-[8vh]">
         <div className="text-4xl font-bold w-64">{eventList.length > 0 ? "Here Are Your Matches" : "Hmm. Looks like something went wrong."}</div>
       </div>
       <div className="grid grid-cols-2 divide-x p-8 content-center">

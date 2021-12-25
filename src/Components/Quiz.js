@@ -58,7 +58,7 @@ function Quiz() {
   };
   
   return (
-    <div className="Quiz">
+    <div className="Quiz pt-[8vh]">
       <progress className="h-2 lg:w-[20vw]" value={(currQuestion/Questions.length)*100} max="100"></progress>
 
       <div className="text-xl font-bold p-3">Question {currQuestion + 1}</div>
@@ -89,10 +89,8 @@ function Quiz() {
         
       </div>
       <div className="flex justify-center p-20">
-        <div className="px-10"><NormalButton handleClick={() => previousQuestion()} disabled={currQuestion <= 0 ? true : false} label="BACK"/></div>
-        
-    
-        <div className="px-10"><OrangeButton handleClick={() => nextQuestion()} label={currQuestion >= Questions.length - 1 ? "FINISH" : "NEXT"}/></div>
+        <div className="px-[3vw]"><NormalButton handleClick={() => previousQuestion()} disabled={currQuestion <= 0 ? true : false} label="BACK"/></div>
+        <div className="px-[3vw]"><OrangeButton handleClick={() => nextQuestion()} label={currQuestion >= Questions.length - 1 ? "FINISH" : "NEXT"}/></div>
       </div>
     </div>
   );
