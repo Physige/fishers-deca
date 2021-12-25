@@ -112,7 +112,12 @@ function Results() {
             <div className="flex justify-center p-2">
               <Collapsible 
               trigger={
-                <div className="2xl:w-[45vw] md:w-[60vw] sm:w-[80vw] w-[100vw] p-5 bg-stone-200 text-left">{event}</div>
+                <div className="flex 2xl:w-[45vw] md:w-[60vw] sm:w-[80vw] w-[100vw] p-5 justify-between bg-stone-200">
+                  {event}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="grey">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               }
               triggerOpenedClassName={
                 <div>{event}</div>
