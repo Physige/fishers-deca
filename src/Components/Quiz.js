@@ -1,6 +1,8 @@
 import React, {useState, useContext} from "react"
 import { Questions } from "../Helpers/Questions"
 import { SiteContext } from "../Helpers/Contexts";
+import NormalButton from "./Buttons/NormalButton";
+import OrangeButton from "./Buttons/OrangeButton";
 
 function Quiz() {
   const { setSelected, setSiteState } = useContext(SiteContext);
@@ -57,11 +59,11 @@ function Quiz() {
   
   return (
     <div className="Quiz">
-      <progress value={(currQuestion/Questions.length)*100} max="100"></progress>
+      <progress className="h-2 lg:w-[20vw]" value={(currQuestion/Questions.length)*100} max="100"></progress>
 
-      <h1>Question {currQuestion + 1}</h1>
+      <div className="text-xl font-bold p-3">Question {currQuestion + 1}</div>
 
-      <p>{Questions[currQuestion].question}</p>
+      <div className="text-3xl p-5">{Questions[currQuestion].question}</div>
       
       <div id="options">
         {
@@ -73,19 +75,25 @@ function Quiz() {
           Object.values(Questions[currQuestion]).slice(1).map((option, i) => { //REFACTOR LATER <====================================
             return (
               <form>
-                <label>
-                  <input type="checkbox" id={i} onChange={(e) => populateCheckboxes(e)} 
-                    checked={checkboxStates[currQuestion].indexOf(String(i)) !== -1 ? true : false}></input>
-                  {option}
-                </label>
+                <div className="grid 2xl:grid-cols-4 md:grid-cols-7 text-left">
+                  <label className="2xl:col-end-4 md:text-xl md:col-start-2 md:col-end-7 text-xs my-2 bg-stone-100 cursor-pointer">
+                    <input className="md:h-10 md:w-10 sm:m-5 m-4 align-middle cursor-pointer" type="checkbox" id={i} onChange={(e) => populateCheckboxes(e)} 
+                      checked={checkboxStates[currQuestion].indexOf(String(i)) !== -1 ? true : false}></input>
+                    {option}
+                  </label>
+                </div>
               </form>
             )
           })
         }
         
       </div>
-      <button onClick={() => previousQuestion()} disabled={currQuestion <= 0 ? true : false}>Back</button>
-      <button onClick={() => nextQuestion()}>{currQuestion >= Questions.length - 1 ? "Finish" : "Next"}</button>
+      <div className="flex justify-center p-20">
+        <div className="px-10"><NormalButton handleClick={() => previousQuestion()} disabled={currQuestion <= 0 ? true : false} label="BACK"/></div>
+        
+    
+        <div className="px-10"><OrangeButton handleClick={() => nextQuestion()} label={currQuestion >= Questions.length - 1 ? "FINISH" : "NEXT"}/></div>
+      </div>
     </div>
   );
 }

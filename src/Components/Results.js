@@ -4,6 +4,7 @@ import { Questions } from "../Helpers/Questions";
 import { Events } from "../Helpers/Events";
 import Collapsible from 'react-collapsible';
 import OrangeButton from "./Buttons/OrangeButton";
+import NormalButton from "./Buttons/NormalButton";
 
 // lol this entire file is a mess. too bad!
 function Results() {
@@ -82,18 +83,18 @@ function Results() {
   return (
     <div className="Results">
       <div className="flex justify-center">
-        <div className="text-4xl font-bold w-64">Here Are Your Matches</div>
+        <div className="text-4xl font-bold w-64">{eventList.length > 0 ? "Here Are Your Matches" : "Hmm. Looks like something went wrong."}</div>
       </div>
       <div className="grid grid-cols-2 divide-x p-8 content-center">
         <div className="flex justify-end content-center">
           {/* displays different text depending if no events could be found */}
           <div className="w-64 pr-8 text-left">{eventList.length > 0 ? 
-            "Remember! You don’t have to choose one of these. Click view all to see all the events." :
+            "Remember! You're not required to choose one of these. Click view all to see all the events." :
             "No event could be found. Make sure you select All THAT APPLY. Please try again."
             }</div>
         </div>
         <div className="grid justify-start content-center">
-          <div className="sm:w-64 pl-8">
+          <div className="sm:w-64 sm:pl-8 pl-[6vw]">
             {/* prompts to try again and reload page if no events could be found */}
             <OrangeButton label={eventList.length > 0 ? "VIEW ALL" : "TRY AGAIN"} handleClick={() => {
               if (eventList.length > 0) {
@@ -111,7 +112,7 @@ function Results() {
             <div className="flex justify-center p-2">
               <Collapsible 
               trigger={
-                <div className="w-[40vw] p-5 bg-stone-200 text-left">{event}</div>
+                <div className="2xl:w-[45vw] md:w-[60vw] sm:w-[80vw] w-[100vw] p-5 bg-stone-200 text-left">{event}</div>
               }
               triggerOpenedClassName={
                 <div>{event}</div>
@@ -120,7 +121,7 @@ function Results() {
                   getEventDetails(event).map((eventDetails) => {
                     return (
                       <div className="bg-stone-300 text-left">
-                        <li className="p-2 pl-5 w-[40vw] break-all">{eventDetails}</li>
+                        <li className="2xl:w-[45vw] md:w-[60vw] sm:w-[80vw] w-[100vw] p-2 pl-5 break-normal">{eventDetails}</li>
                       </div>
                     )
                   })
@@ -130,6 +131,7 @@ function Results() {
           )
         })
       }
+      <div className="h-32"></div>
     </div>
   );
 }

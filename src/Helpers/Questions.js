@@ -13,7 +13,7 @@ export const Questions = [
     },
 
     {
-        question: "What type of projects are you interested in?",
+        question: "What type of projects are you interested in? (Select all that apply)",
         option1: "Written Project w/Presentation (1-3 Participants)",
         option2: "Role-Play (1 Participant)",
         option3: "Case Study (2 Participants)",
@@ -22,7 +22,7 @@ export const Questions = [
     },
 
     {
-        question: "Project with exam?",
+        question: "Project with exam? (Select all that apply)",
         option1: "Yes (With Exam)",
         option2: "No (Without Exam)"
     },
