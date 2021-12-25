@@ -6,9 +6,9 @@ import OrangeButton from "./Buttons/OrangeButton";
 function Home() {
   const { setSiteState } = useContext(SiteContext)
   return (
-    <div className="h-[92vh] w-[100vw] bg-gradient-to-r from-blue-500 to-blue-800">
+    <div className="bg-gradient-to-r from-blue-500 to-blue-800 min-h-[700px] h-[92vh] w-[100vw]">
       <div className="md:text-left text-center md:justify-start justify-center md:w-[60vw] p-[10vw]">
-        <div className="text-white font-bold md:text-6xl py-5 pt-32 text-5xl">CHOOSING A PROJECT</div>
+        <div className="text-white font-bold md:text-6xl py-5 pt-[12vh] text-5xl">CHOOSING A PROJECT</div>
         <div className="text-white text-xl py-5">With so many projects, choosing one can be hard. Let us help! Project topics can range from marketing, business administration, finance, and hospitality. By answering a few questions, we can help you find the perfect match!</div> 
         <div className="md:flex pt-8">
           <div className="md:pr-4">
