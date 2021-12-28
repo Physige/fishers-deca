@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/fishers-deca/static/css/main.3297aca0.css",
-    "main.js": "/fishers-deca/static/js/main.fc667dd2.js",
+    "main.js": "/fishers-deca/static/js/main.9d5db8b4.js",
     "index.html": "/fishers-deca/index.html",
     "main.3297aca0.css.map": "/fishers-deca/static/css/main.3297aca0.css.map",
-    "main.fc667dd2.js.map": "/fishers-deca/static/js/main.fc667dd2.js.map"
+    "main.9d5db8b4.js.map": "/fishers-deca/static/js/main.9d5db8b4.js.map"
   },
   "entrypoints": [
     "static/css/main.3297aca0.css",
-    "static/js/main.fc667dd2.js"
+    "static/js/main.9d5db8b4.js"
   ]
 }
