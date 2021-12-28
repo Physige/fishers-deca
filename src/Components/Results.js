@@ -83,14 +83,14 @@ function Results() {
   return (
     <div className="Results">
       <div className="flex justify-center pt-[8vh]">
-        <div className="text-4xl font-bold w-64">{eventList.length > 0 ? "Here Are Your Matches" : "Hmm. Looks like something went wrong."}</div>
+        <div className="text-4xl font-bold w-64">{eventList.length > 0 ? "Here Are Your Matches" : "Sorry. No event could be found."}</div>
       </div>
       <div className="grid grid-cols-2 divide-x p-8 content-center">
         <div className="flex justify-end content-center">
           {/* displays different text depending if no events could be found */}
           <div className="w-64 pr-8 text-left">{eventList.length > 0 ? 
             "Remember! You're not required to choose one of these. Click view all to see all the events." :
-            "No event could be found. Make sure you select All THAT APPLY. Please try again."
+            "Make sure you select All THAT APPLY. Some events, such as the roleplays and case studies require an exam. Please try again."
             }</div>
         </div>
         <div className="grid justify-start content-center">

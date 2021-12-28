@@ -44,7 +44,7 @@ function Quiz() {
       // NOTE: these extra steps need to be taken for updating a stateful array
       currQuestionState.push(e.target.id);
       allQuestionsState[currQuestion] = currQuestionState;
-      console.log(allQuestionsState);
+      //console.log(allQuestionsState);
       setCheckboxStates(allQuestionsState);
     } else {
       // removes id of selected question to corresponding array in checkboxStates
@@ -52,7 +52,7 @@ function Quiz() {
       // TODO maybe: check if indexOf returns -1
       currQuestionState.splice(currQuestionState.indexOf(e.target.id), 1);
       allQuestionsState[currQuestion] = currQuestionState;
-      console.log(allQuestionsState);
+      //console.log(allQuestionsState);
       setCheckboxStates(allQuestionsState);
     }
   };
